@@ -1,5 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
+
 function createDiv() {
+  gridContainer.innerHTML = '';
   for (i = 0; i < 256; i++) {
     const div = document.createElement('div');
     div.classList.add('grid-item');
@@ -12,5 +14,4 @@ function createDiv() {
     });
   });
 }
-
 createDiv();
