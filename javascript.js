@@ -7,14 +7,11 @@ function updateGridSize() {
   gridButtonElement.addEventListener('click', () => {
     let newSize = prompt('Insert a grid size');
     newSize = parseInt(newSize);
-    console.log(newSize);
-    if (newSize > 0) {
+    if (newSize > 0 && newSize <= 100) {
       gridSize = newSize * newSize;
-      gridContainer.style.height = (52 * newSize) + 'px';
-      gridContainer.style.width = (52 * newSize) + 'px';
       createDiv();
     } else {
-      alert('Please enter a valid number');
+      alert('Please insert a grid size (1-100)');
     }
   })
 }
@@ -23,9 +20,14 @@ updateGridSize();
 
 function createDiv() {
   gridContainer.innerHTML = '';
+  const containerWidth = gridContainer.clientWidth;
+  const gridSizePerRow = Math.sqrt(gridSize);
+  const itemSize = Math.floor(containerWidth / gridSizePerRow);
   for (i = 0; i < gridSize; i++) {
     const div = document.createElement('div');
     div.classList.add('grid-item');
+    div.style.width = `${itemSize}px`;
+    div.style.height = `${itemSize}px`;
     gridContainer.appendChild(div);
   }
   const gridItem = document.querySelectorAll('.grid-item');
@@ -35,4 +37,5 @@ function createDiv() {
     });
   });
 }
+
 createDiv();
