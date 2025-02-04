@@ -2,6 +2,7 @@ const gridContainer = document.querySelector('.grid-container');
 
 let gridSize = 256;
 
+// Function to allow the user to adjust the grid size when clicking the change grid size button
 function updateGridSize() {
   const gridButtonElement = document.querySelector('.js-grid-button');
   gridButtonElement.addEventListener('click', () => {
@@ -18,6 +19,7 @@ function updateGridSize() {
 
 updateGridSize();
 
+// Function to generate the grid divs inside grid container
 function createDiv() {
   gridContainer.innerHTML = '';
   const containerWidth = gridContainer.clientWidth;
@@ -38,6 +40,7 @@ function createDiv() {
   });
 }
 
+// Function to generate a random color 
 function randomColor() {
   const r = Math.floor(Math.random() * 255);
   const g = Math.floor(Math.random() * 255);
