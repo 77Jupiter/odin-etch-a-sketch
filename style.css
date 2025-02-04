@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box; 
+}
+
 body {
   background-color: rgb(49, 49, 49);
   display: flex;
@@ -9,16 +13,14 @@ body {
 
 .grid-container {
   display: flex;
+  width: 800px;
+  height: 800px;
   flex-wrap: wrap;
-  width: 650px;
-  height: 650px;
-  gap: 0;
 }
 
 .grid-item {
   background-color: rgb(243, 242, 242);
   border: 1px solid grey;
-  box-sizing: border-box; 
 }
 
 button {
