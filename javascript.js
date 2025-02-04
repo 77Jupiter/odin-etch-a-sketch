@@ -33,9 +33,16 @@ function createDiv() {
   const gridItem = document.querySelectorAll('.grid-item');
   gridItem.forEach((item) => {
     item.addEventListener('mouseover', () => {
-      item.style.backgroundColor = 'black';
+        item.style.backgroundColor = randomColor();        
     });
   });
+}
+
+function randomColor() {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`
 }
 
 createDiv();
